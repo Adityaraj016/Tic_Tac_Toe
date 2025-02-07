@@ -62,8 +62,11 @@ public class Main {
     }
     public static void printBoard(char[][] board){
         for(int row =0 ;row < board.length ; row++){
-            for(int col = 0; col < board[row].length-1 ; col++){
-                System.out.print(board[row][col] + " | ");
+            for(int col = 0; col < board[row].length ; col++){
+                System.out.print(board[row][col]);
+                if(col !=2){
+                    System.out.print(" | ");
+                }
             }
             System.out.println();
         }
