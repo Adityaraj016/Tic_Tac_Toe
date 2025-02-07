@@ -17,8 +17,9 @@ public class Main {
 
         while(!gameover){
             printBoard(board);
-            System.out.print("Player " + player + " enter: ");
+            System.out.print("Player " + player + " enter row(0,1,2): ");
             int row = sc.nextInt();
+            System.out.print("Player " + player + " enter col(0,1,2): ");
             int col = sc.nextInt();
 
             if((row <= 2 && col <= 2) && board[row][col] == ' '){
@@ -61,14 +62,14 @@ public class Main {
     }
     public static void printBoard(char[][] board){
         for(int row =0 ;row < board.length ; row++){
-            for(int col = 0; col < board[row].length ; col++){
+            for(int col = 0; col < board[row].length-1 ; col++){
                 System.out.print(board[row][col] + " | ");
             }
             System.out.println();
         }
     }
 
-    public static boolean haveWon(char[][] board, int player){
+    public static boolean haveWon(char[][] board, char player){
         //check the rows
         for(int row =0 ;row < board.length ; row++){
             if(board[row][0] == player && board[row][1] == player && board[row][2] == player){
